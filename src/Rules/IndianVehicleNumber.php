@@ -15,7 +15,7 @@ class IndianVehicleNumber implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (!preg_match('/^[A-Z]{2}[0-9]{2}[A-Z]{1,2}[0-9]{4}$/', strtoupper($value))) {
-            $fail('supporter::validation.indian_vehicle_number')->translate();
+            $fail(__('supporter::validation.indian_vehicle_number'));
         }
     }
 }

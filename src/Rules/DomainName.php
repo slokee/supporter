@@ -17,7 +17,7 @@ class DomainName implements ValidationRule
         $pattern = '/^(?!:\/\/)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,}$/';
 
         if (!preg_match($pattern, $value)) {
-            $fail('supporter::validation.domain_name')->translate();
+            $fail(__('supporter::validation.domain_name'));
         }
     }
 }

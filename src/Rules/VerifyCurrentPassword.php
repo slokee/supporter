@@ -29,7 +29,7 @@ class VerifyCurrentPassword implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (!Hash::check($value, $this->user->password)) {
-            $fail('supporter::validation.verify_current_password')->translate();
+            $fail(__('supporter::validation.verify_current_password'));
         }
     }
 }

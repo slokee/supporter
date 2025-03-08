@@ -17,7 +17,7 @@ class AadhaarNumber implements ValidationRule
         $value = str_replace(' ', '', $value);
 
         if (strlen($value) !== 12 || !ctype_digit($value)) {
-            $fail('supporter::validation.aadhaar')->translate();
+            $fail(__('supporter::validation.aadhaar'));
         }
     }
 }

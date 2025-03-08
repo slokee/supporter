@@ -18,7 +18,7 @@ class Pincode implements ValidationRule
 
         // Check if the PIN code matches the pattern
         if (!preg_match($pattern, $value)) {
-            $fail('supporter::validation.pincode')->translate();
+            $fail(__('supporter::validation.pincode'));
         }
     }
 }

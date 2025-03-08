@@ -17,7 +17,7 @@ class IndianPhoneNumber implements ValidationRule
         $pattern = '/^(?:(?:\+?1\s*(?:\d{3})?)?\)?([6789]\d{9}))$/';
 
         if(! preg_match($pattern, $value)) {
-            $fail('supporter::validation.indian_phone_number')->translate();
+            $fail(__('supporter::validation.indian_phone_number'));
         }
 
     }

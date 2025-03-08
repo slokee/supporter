@@ -31,7 +31,7 @@ class EmailDomain implements ValidationRule
         $domain = substr(strrchr($value, "@"), 1);
 
         if (!in_array($domain, $this->allowedDomains)) {
-            $fail('supporter::validation.email_domain')->translate();
+            $fail(__('supporter::validation.email_domain'));
         }
     }
 }
