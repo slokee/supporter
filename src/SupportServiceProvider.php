@@ -4,7 +4,7 @@ namespace Slokee\Supporter;
 
 use Illuminate\Support\ServiceProvider;
 
-class PackageServiceProvider extends ServiceProvider
+class SupportServiceProvider extends ServiceProvider
 {
     public function register()
     {
