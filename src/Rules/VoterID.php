@@ -14,7 +14,7 @@ class VoterID implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (!preg_match('/^[A-Z]{1}-[0-9]{7}-[0-9]{7}$/', $value)) {
+        if (!preg_match('/^[A-Z]{3}[0-9]{7}$/i', $value)) {
             $fail(__('supporter::validation.voter_id'));
         }
     }

@@ -14,7 +14,7 @@ class IndianPhoneNumber implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $pattern = '/^(?:(?:\+?1\s*(?:\d{3})?)?\)?([6789]\d{9}))$/';
+        $pattern = '/^(?:\+91\s?|91)?[6789]\d{9}$/';
 
         if(! preg_match($pattern, $value)) {
             $fail(__('supporter::validation.indian_phone_number'));

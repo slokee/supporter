@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Rules;
+namespace Slokee\Supporter\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
@@ -18,14 +18,14 @@ class Latitude implements ValidationRule
             $fail(__('supporter::validation.latlong_numeric'));
             return;
         }
-        
-        if (!preg_match('/^-?\d{1,2}(\.\d{1,8})?$/', $value)) {
-            $fail(__('supporter::validation.latlong_format'));
+
+        if ($value < -90 || $value > 90) {
+            $fail(__('supporter::validation.latitude_range'));
             return;
         }
         
-        if ($value < -90 || $value > 90) {
-            $fail(__('supporter::validation.latitude_range'));
-        }
+        if (!preg_match('/^-?(90(\.0{1,8})?|[0-8]?\d(\.\d{1,8})?)$/', $value)) {
+            $fail(__('supporter::validation.latlong_format'));
+        }    
     }
 }
