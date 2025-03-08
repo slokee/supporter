@@ -15,11 +15,11 @@ class GstNumber implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (strlen($value) !== 15) {
-            $fail('The :attribute must be 15 characters');
+            $fail(__('supporter::validation.gst_number_length'));
         }
 
         if(! preg_match('/^[A-Z]{2}[0-9A-Z]{10}[A-Z]{1}[0-9A-Z]{1}$/', $value)) {
-            $fail('supporter::validation.gst_number')->translate();
+            $fail(__('supporter::validation.gst_number'));
         }
     }
 }

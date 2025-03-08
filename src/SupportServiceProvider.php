@@ -13,12 +13,17 @@ class SupportServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/supporter.php' => config_path('supporter.php'),
-        ], 'config');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'supporter');
+        $this->mergeConfigFrom(__DIR__ . '/../config/supporter.php', 'supporter');
 
         $this->publishes([
-            __DIR__.'/../lang' => lang_path('vendor/supporter'),
-        ], 'supporter-lang');
+            __DIR__ . '/../lang' => lang_path('vendor/supporter'),
+        ], 'supporter-translations');
+
+        $this->publishes([
+            __DIR__ . '/../config/supporter.php' => function_exists('config_path') 
+                ? config_path('supporter.php') 
+                : base_path('config/supporter.php'),
+        ], 'supporter-config');
     }
 }
