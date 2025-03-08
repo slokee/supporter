@@ -5,7 +5,7 @@ namespace Slokee\Supporter\Rules;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 
-class IndianPhoneNumbee implements ValidationRule
+class IndianPhoneNumber implements ValidationRule
 {
     /**
      * Validate if the given value is a valid Indian phone number.
