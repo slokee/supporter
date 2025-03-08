@@ -15,7 +15,7 @@ class EmailDomain implements ValidationRule
     /**
      * Initialize the rule with allowed email domains.
      */
-    public function __construct(array $allowedDomains)
+    public function __construct(array | string $allowedDomains)
     {
         $this->allowedDomains = is_array($allowedDomains) ? $allowedDomains : [$allowedDomains];
     }
