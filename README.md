@@ -29,6 +29,18 @@ php artisan vendor:publish --provider="Slokee\Supporter\SupportServiceProvider"
 
 Refer to the individual documentation files for detailed usage examples.
 
+## Contribution
+
+We welcome contributions! Please check the [Contribution Guide](docs/contribution.md) for more details on how to get involved.
+
 ## License
 
 This package is open-source software licensed under the [MIT license](LICENSE).
+
+## Reporting Issues
+
+If you encounter a bug or have a feature request, please open an issue on GitHub with detailed information.
+
+## Contact
+
+For reporting bugs or further inquiries, you can reach out via email at: **[contact@slokee.com](mailto:contact@slokee.com)**
