@@ -1,0 +1,39 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# Node dependencies (if applicable)
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Ignore compiled files
+/.phpunit.result.cache
+/.phpstorm.meta.php
+/.idea/
+/.nfs*
+
+# Logs and caches
+/.DS_Store
+/.vscode/
+*.log
+*.cache
+
+# PHPUnit and Pest coverage reports
+/coverage/
+/phpunit.xml
+/pest-results.json
+
+# Laravel-specific files (if running tests within Laravel framework)
+/storage/
+/bootstrap/cache/
+
+# Editor and system files
+Thumbs.db
+*.swp
+*.swo
+
+# Build artifacts
+/build/
+/dist/
