@@ -1,7 +1,6 @@
 {
     "name": "slokee/supporter",
     "description": "Laravel Supporter is a powerful utility package designed to enhance development speed by providing ready-to-use code snippets. This package helps developers streamline their workflow by reducing repetitive coding tasks, ensuring cleaner and more efficient Laravel applications.",
-    "version": "1.0.0",
     "type": "library",
     "minimum-stability": "stable",
     "config": {
