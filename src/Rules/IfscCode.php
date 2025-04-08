@@ -15,7 +15,7 @@ class IfscCode implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (!preg_match('/^[A-Z]{4}0[A-Z0-9]{6}$/', $value)) {
-            $fail(__('supporter::validation.ifsc_code'));
+            $fail('The :attribute is not a valid IFSC code.');
        }
     }
 }

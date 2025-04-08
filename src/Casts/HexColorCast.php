@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
 /**
- * Handles hex color formatting for model attributes.
+ * Handles HEX color formatting for model attributes.
  */
-class ColorCast implements CastsAttributes
+class HexColorCast implements CastsAttributes
 {
     /**
      * Ensures the color value has a "#" prefix when retrieved.
@@ -22,7 +22,7 @@ class ColorCast implements CastsAttributes
     /**
      * Stores the color in lowercase without the "#" prefix.
      *
-     * @throws InvalidArgumentException If the value is not a valid hex color.
+     * @throws InvalidArgumentException If the value is not a valid HEX color.
      */
     public function set(Model $model, string $key, mixed $value, array $attributes): mixed
     {
@@ -30,8 +30,9 @@ class ColorCast implements CastsAttributes
             return null;
         }
 
-        if (!preg_match('/^#?[a-fA-F0-9]{6}$/', $value)) {
-            throw new InvalidArgumentException("The value provided for {$key} is not a valid color.");
+        // Validate hex color (3 or 6 digits), with optional #
+        if (!preg_match('/^#?([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$/', $value)) {
+            throw new InvalidArgumentException("The value provided for {$key} is not a valid hex color.");
         }
 
         return strtolower(ltrim($value, '#'));

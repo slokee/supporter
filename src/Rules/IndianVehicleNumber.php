@@ -17,7 +17,7 @@ class IndianVehicleNumber implements ValidationRule
         $pattern = '/^[A-Z]{2}[-\s]?\d{1,2}[-\s]?[A-Z]{0,3}[-\s]?\d{1,4}$/i';
 
         if (!preg_match($pattern, strtoupper($value))) {
-            $fail(__('supporter::validation.indian_vehicle_number'));
+            $fail('The :attribute must be a valid Indian vehicle registration number.');
         }
     }
 }

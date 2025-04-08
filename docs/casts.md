@@ -4,24 +4,44 @@ The `slokee/supporter` package provides custom Eloquent model casts to enhance d
 
 ## Available Casts
 
-- [ColorCast](#colorcast) - Ensures color values are properly formatted.
+- [HexColorCast](#hexcolorcast) - Validates and formats hex color values.
+- [EncryptedCast](#encryptedcast) - Automatically encrypts and decrypts model values.
+
 
 ---
 
-## ColorCast
+## HexColorCast
 
-The `ColorCast` class manages color values, ensuring they are consistently formatted.
+The `HexColorCast` handles hex color validation and normalization. It ensures values are valid hex colors and stores them in a consistent format.
 
 ### Usage
 
-Define the cast in your model's `$casts` property:
-
 ```php
-use Slokee\Supporter\Casts\ColorCast;
+use Slokee\Supporter\Casts\HexColorCast;
 
 class ExampleModel extends Model
 {
     protected $casts = [
-        'color' => ColorCast::class,
+        'background_color' => HexColorCast::class,
     ];
 }
+```
+
+---
+
+## EncryptedCast
+
+The `EncryptedCast` automatically encrypts values when saving to the database and decrypts them when retrieving.
+
+### Usage
+
+```php
+use Slokee\Supporter\Casts\EncryptedCast;
+
+class ExampleModel extends Model
+{
+    protected $casts = [
+        'sensitive_data' => EncryptedCast::class,
+    ];
+}
+```

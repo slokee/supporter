@@ -9,6 +9,8 @@ This package provides various custom validation rules to extend Laravel's valida
 - [DrivingLicense](#drivinglicense) - Validates an Indian driving license number.
 - [EmailDomain](#emaildomain) - Restricts email to specified domains.
 - [GstNumber](#gstnumber) - Validates a GST number format.
+- [HexColor](#hexcolor) - Ensures the value is a valid hexadecimal color.
+- [HtmlNamedColor](#htmlnamedcolor) - Validates that the value is one of the official HTML named colors.
 - [IfscCode](#ifsccode) - Ensures a valid IFSC code.
 - [IndianPhoneNumber](#indianphonenumber) - Validates Indian mobile numbers.
 - [IndianVehicleNumber](#indianvehiclenumber) - Checks for a valid Indian vehicle registration number.
@@ -47,6 +49,36 @@ $request->validate([
     'email' => ['required', 'email', new EmailDomain(['example.com', 'test.com'])],
 ]);
 ```
+
+---
+
+### HexColor
+Validates that the value is a valid hexadecimal color code (e.g., `#fff`, `#ffffff`).
+
+**Usage:**
+```php
+use Slokee\Supporter\Rules\HexColor;
+
+$request->validate([
+    'color' => ['required', new HexColor()],
+]);
+```
+
+---
+
+### HtmlNamedColor
+Validates that the value is one of the official HTML named colors (e.g., `red`, `blue`, `lightgray`).
+
+**Usage:**
+```php
+use Slokee\Supporter\Rules\HtmlNamedColor;
+
+$request->validate([
+    'color' => ['required', new HtmlNamedColor()],
+]);
+```
+
+This rule is powered by the [`HtmlNamedColor`](enums.md#htmlnamedcolor) Enum.
 
 ---
 

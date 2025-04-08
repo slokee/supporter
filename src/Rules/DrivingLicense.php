@@ -15,7 +15,7 @@ class DrivingLicense implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (!preg_match('/^[A-Z]{2}[\s\-\/]?\d{2}[\s\-\/]?\d{11}$/', $value)) {
-            $fail(__('supporter::validation.driving_license'));
+            $fail('The :attribute is not a valid Driving License number.');
         }
     }
 }

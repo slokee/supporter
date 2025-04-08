@@ -20,14 +20,37 @@ php artisan vendor:publish --provider="Slokee\Supporter\SupportServiceProvider"
 
 - [Validation Rules](docs/validation.md) - Custom validation rules to extend Laravel's validation capabilities.
 - [Casts](docs/casts.md) - Custom Eloquent model casts for better data handling.
+- [Commands](docs/commands.md) - Artisan commands to generate services, repositories, and more.
 - Scopes:
   - [Local Scopes](docs/local-scopes.md) - Predefined local model scopes for common queries.
   - [Global Scopes](docs/global-scopes.md) - Global query scopes for automatic model filtering.
 - [Utilities](docs/utilities.md) - Additional helper functions to simplify common operations.
+- [Enums](docs/enums.md) - Enum classes to standardize values like named colors.
 
 ## Usage
 
 Refer to the individual documentation files for detailed usage examples.
+
+
+## Publishing Stubs and Configurations
+
+To customize stub files or configurations used by the commands, you can publish them using the following tags:
+
+```sh
+# Publish configuration file
+php artisan vendor:publish --tag=supporter-config
+
+# Publish translation files
+php artisan vendor:publish --tag=supporter-translations
+
+# Publish stub files
+php artisan vendor:publish --tag=supporter-stubs
+```
+
+This will publish:
+
+- `config/supporter.php`
+- `stubs/supporter/*`
 
 ## Contribution
 

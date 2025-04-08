@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Http\Request;
+
+interface {{ class }}
+{
+    public function list(Request $request = null);
+    public function getOneById(int $id);
+}
