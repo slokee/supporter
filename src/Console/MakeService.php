@@ -2,11 +2,11 @@
 
 namespace Slokee\Supporter\Console;
 
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\PromptsForMissingInput;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Exception;
 
 class MakeService extends Command implements PromptsForMissingInput
 {
@@ -38,14 +38,14 @@ class MakeService extends Command implements PromptsForMissingInput
             }
 
             $publishedStubPath = base_path('stubs/supporter/service.stub');
-            $defaultStubPath = __DIR__ . '/../../stubs/service.stub';
+            $defaultStubPath = __DIR__.'/../../stubs/service.stub';
             $stubPath = File::exists($publishedStubPath) ? $publishedStubPath : $defaultStubPath;
 
-            if (!File::exists($stubPath)) {
+            if (! File::exists($stubPath)) {
                 throw new Exception('Stub file does not exist');
             }
 
-            $content = str_replace(['{{ class }}'], [$name . 'Service'], File::get($stubPath));
+            $content = str_replace(['{{ class }}'], [$name.'Service'], File::get($stubPath));
 
             File::ensureDirectoryExists(app_path('Services'));
             File::put($filePath, $content);

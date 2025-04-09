@@ -18,7 +18,7 @@ class PassportNumber implements ValidationRule
 
         $pattern = '/^[A-Z][1-9][0-9]\d{4}$/';
 
-        if (!preg_match($pattern, $value)) {
+        if (! preg_match($pattern, $value)) {
             $fail('The :attribute is not a valid Indian passport number.');
         }
     }

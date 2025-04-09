@@ -24,7 +24,7 @@ trait MonthScope
     {
         $query->whereYear($column, $year)->whereMonth($column, $month);
     }
-    
+
     /**
      * Filter records where the given column falls in the current month.
      */

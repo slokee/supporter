@@ -2,9 +2,9 @@
 
 namespace Slokee\Supporter\Casts;
 
-use InvalidArgumentException;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Illuminate\Database\Eloquent\Model;
+use InvalidArgumentException;
 
 /**
  * Handles HEX color formatting for model attributes.
@@ -16,7 +16,7 @@ class HexColorCast implements CastsAttributes
      */
     public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        return $value && !str_starts_with($value, '#') ? "#{$value}" : $value;
+        return $value && ! str_starts_with($value, '#') ? "#{$value}" : $value;
     }
 
     /**
@@ -31,7 +31,7 @@ class HexColorCast implements CastsAttributes
         }
 
         // Validate hex color (3 or 6 digits), with optional #
-        if (!preg_match('/^#?([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$/', $value)) {
+        if (! preg_match('/^#?([a-fA-F0-9]{3}|[a-fA-F0-9]{6})$/', $value)) {
             throw new InvalidArgumentException("The value provided for {$key} is not a valid hex color.");
         }
 

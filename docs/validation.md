@@ -4,37 +4,24 @@ This package provides various custom validation rules to extend Laravel's valida
 
 ## Available Rules
 
-- [AadhaarNumber](#aadhaarnumber) - Validates an Indian Aadhaar number.
-- [DomainName](#domainname) - Ensures a valid domain format.
-- [DrivingLicense](#drivinglicense) - Validates an Indian driving license number.
+- [AadhaarNumber](#general) - Validates an Indian Aadhaar number.
+- [CommaSeparatedEmails](#general) - Validates comma-separated email addresses.
+- [DomainName](#general) - Ensures a valid domain format.
+- [DrivingLicense](#general) - Validates an Indian driving license number.
 - [EmailDomain](#emaildomain) - Restricts email to specified domains.
-- [GstNumber](#gstnumber) - Validates a GST number format.
+- [GstNumber](#general) - Validates a GST number format.
 - [HexColor](#hexcolor) - Ensures the value is a valid hexadecimal color.
 - [HtmlNamedColor](#htmlnamedcolor) - Validates that the value is one of the official HTML named colors.
-- [IfscCode](#ifsccode) - Ensures a valid IFSC code.
-- [IndianPhoneNumber](#indianphonenumber) - Validates Indian mobile numbers.
-- [IndianVehicleNumber](#indianvehiclenumber) - Checks for a valid Indian vehicle registration number.
-- [Latitude](#latitude) - Validates latitude values.
-- [PanNumber](#pannumber) - Ensures a valid PAN number.
-- [PassportNumber](#passportnumber) - Validates an Indian passport number.
-- [Pincode](#pincode) - Ensures a valid Indian postal code.
-- [Subdomain](#subdomain) - Checks for valid subdomains and reserved names.
+- [IfscCode](#general) - Ensures a valid IFSC code.
+- [IndianPhoneNumber](#general) - Validates Indian mobile numbers.
+- [IndianVehicleNumber](#general) - Checks for a valid Indian vehicle registration number.
+- [Latitude](#general) - Validates latitude values.
+- [PanNumber](#general) - Ensures a valid PAN number.
+- [PassportNumber](#general) - Validates an Indian passport number.
+- [Pincode](#general) - Ensures a valid Indian postal code.
+- [Subdomain](#general) - Checks for valid subdomains and reserved names.
 - [VerifyCurrentPassword](#verifycurrentpassword) - Ensures the provided password matches the user's current password.
-- [VoterID](#voterid) - Validates an Indian voter ID format.
-
----
-
-### AadhaarNumber
-Validates if the provided value is a valid Indian Aadhaar number.
-
-**Usage:**
-```php
-use Slokee\Supporter\Rules\AadhaarNumber;
-
-$request->validate([
-    'aadhaar' => ['required', new AadhaarNumber()],
-]);
-```
+- [VoterID](#general) - Validates an Indian voter ID format.
 
 ---
 
@@ -95,20 +82,7 @@ $request->validate([
 ```
 
 ---
-
-### Subdomain
-Validates that the subdomain follows the correct format and is not reserved.
-
-**Usage:**
-```php
-use Slokee\Supporter\Rules\Subdomain;
-
-$request->validate([
-    'subdomain' => ['required', new Subdomain()],
-]);
-```
-
----
+### General
 
 For other rules, simply instantiate them like:
 ```php

@@ -14,7 +14,7 @@ class VoterID implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (!preg_match('/^[A-Z]{3}[0-9]{7}$/i', $value)) {
+        if (! preg_match('/^[A-Z]{3}[0-9]{7}$/i', $value)) {
             $fail('The :attribute is not a valid Voter ID.');
         }
     }

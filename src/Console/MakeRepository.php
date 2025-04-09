@@ -47,13 +47,13 @@ class MakeRepository extends Command implements PromptsForMissingInput
             $interfacePath = app_path("{$this->path}/{$name}RepositoryInterface.php");
 
             if (File::exists($repositoryPath)) {
-                throw new Exception("Repository already exists.");
+                throw new Exception('Repository already exists.');
             }
 
             File::ensureDirectoryExists(app_path($this->path));
 
             $stubBasePath = base_path('stubs/supporter');
-            $defaultStubPath = __DIR__ . '/../../stubs';
+            $defaultStubPath = __DIR__.'/../../stubs';
 
             $interfaceStub = File::exists("$stubBasePath/repository-interface.stub")
                 ? "$stubBasePath/repository-interface.stub"

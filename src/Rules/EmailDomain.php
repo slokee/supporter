@@ -8,18 +8,17 @@ use Illuminate\Contracts\Validation\ValidationRule;
 class EmailDomain implements ValidationRule
 {
     /**
-     * @var array $allowedDomains List of allowed email domains for validation.
+     * @var array List of allowed email domains for validation.
      */
     protected $allowedDomains;
 
     /**
      * Initialize the rule with allowed email domains.
      */
-    public function __construct(array | string $allowedDomains)
+    public function __construct(array|string $allowedDomains)
     {
         $this->allowedDomains = is_array($allowedDomains) ? $allowedDomains : [$allowedDomains];
     }
-
 
     /**
      * Validate if the email belongs to an allowed domain.
@@ -28,9 +27,9 @@ class EmailDomain implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $domain = substr(strrchr($value, "@"), 1);
+        $domain = substr(strrchr($value, '@'), 1);
 
-        if (!in_array($domain, $this->allowedDomains)) {
+        if (! in_array($domain, $this->allowedDomains)) {
             $fail('The :attribute must be a valid email with one of the allowed domains.');
         }
     }

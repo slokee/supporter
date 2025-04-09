@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class VerifyCurrentPassword implements ValidationRule
 {
     /**
-     * @var mixed $user The user instance whose password needs verification.
+     * @var mixed The user instance whose password needs verification.
      */
     private $user;
 
@@ -28,7 +28,7 @@ class VerifyCurrentPassword implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (!Hash::check($value, $this->user->password)) {
+        if (! Hash::check($value, $this->user->password)) {
             $fail('The current password does not match.');
         }
     }

@@ -17,7 +17,7 @@ class Pincode implements ValidationRule
         $pattern = '/^[1-9][0-9]{5}$/';
 
         // Check if the PIN code matches the pattern
-        if (!preg_match($pattern, $value)) {
+        if (! preg_match($pattern, $value)) {
             $fail('The :attribute must be a valid 6-digit Indian PIN code.');
         }
     }

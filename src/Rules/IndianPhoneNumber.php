@@ -16,7 +16,7 @@ class IndianPhoneNumber implements ValidationRule
     {
         $pattern = '/^(?:\+91\s?|91)?[6789]\d{9}$/';
 
-        if(! preg_match($pattern, $value)) {
+        if (! preg_match($pattern, $value)) {
             $fail('The :attribute must be a valid Indian phone number.');
         }
     }

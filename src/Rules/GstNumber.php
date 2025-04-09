@@ -18,7 +18,7 @@ class GstNumber implements ValidationRule
             $fail('The :attribute must be 15 characters');
         }
 
-        if(! preg_match('/^[A-Z]{2}[0-9A-Z]{10}[A-Z]{1}[0-9A-Z]{1}$/', $value)) {
+        if (! preg_match('/^[A-Z]{2}[0-9A-Z]{10}[A-Z]{1}[0-9A-Z]{1}$/', $value)) {
             $fail('The :attribute is not a valid GST number.');
         }
     }

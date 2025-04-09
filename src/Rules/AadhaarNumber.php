@@ -16,7 +16,7 @@ class AadhaarNumber implements ValidationRule
     {
         $value = str_replace(' ', '', $value);
 
-        if (strlen($value) !== 12 || !ctype_digit($value)) {
+        if (strlen($value) !== 12 || ! ctype_digit($value)) {
             $fail('The :attribute must be a valid 12-digit Aadhaar number.');
         }
     }
