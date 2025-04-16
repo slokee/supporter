@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Blade\Directives;
+
+use Illuminate\Support\Facades\Blade;
+use Slokee\Supporter\Contracts\BladeDirectiveInterface;
+
+class {$name} implement BladeDirectiveInterface
+{
+    public static function register(): void
+    {
+        Blade::directive('{directive_name}', function (\$expression) {
+            return "";
+        });
+    }
+}

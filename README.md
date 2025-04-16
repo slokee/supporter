@@ -26,6 +26,7 @@ php artisan vendor:publish --provider="Slokee\Supporter\SupportServiceProvider"
   - [Global Scopes](docs/global-scopes.md) - Global query scopes for automatic model filtering.
 - [Utilities](docs/utilities.md) - Additional helper functions to simplify common operations.
 - [Enums](docs/enums.md) - Enum classes to standardize values like named colors.
+- [Blade Diretives](docs/blade-directives.md) - Common Custom Blade directives for faster development. 
 
 ## Usage
 
