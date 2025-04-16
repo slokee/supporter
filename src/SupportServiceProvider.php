@@ -40,7 +40,7 @@ class SupportServiceProvider extends ServiceProvider
 
     protected function getBladeDirectiveClasses()
     {
-        $files = File::allFiles(base_path('Blade/Directives'));
+        $files = File::allFiles(__DIR__.'/Blade/Directives/');
 
         $classes = [];
 
